@@ -5,7 +5,7 @@
 #include<string.h>
 #include <arpa/inet.h>
 #include <unistd.h>
-#include <fcntl.h> 
+#include <fcntl.h>
 
 void sendMsg(int sockfd)
 {
@@ -13,24 +13,29 @@ void sendMsg(int sockfd)
 	printf("\nEnter any filename: ");
 	gets(fname);
 	int fd=open(fname,O_RDONLY,0);
-	
+
 	if(fd<0)
 	{
-	
+
 		perror("Error reading file\n");
 	}
 	else
 	{
-		char buff[2024];
-		
-		read(fd,buff,2000);
-		
-		write(sockfd,buff,2000);
-		
-		printf("\nBuffer Contents: %s\n",buff);
-		
-		printf("\nMsg sent successfully!");
-		
+		char buff[50];
+
+		int nb=0;   //no. of bytes read.
+
+		while(nb=read(fd,buff,10))       //reading 10 bytes at a time
+        {
+            write(sockfd,buff,nb);
+            printf("\nBuffer Contents: %s\n",buff);
+        }
+
+        strcpy(buff,"\0");
+        //printf("\nLast Buffer Content: %s\n",buff);
+        write(sockfd,buff,sizeof(buff));
+		printf("\nMsg. sent successfully!\n");
+
 	}
 }
 
