@@ -43,7 +43,7 @@ newfd=accept(sockfd,(struct sockaddr*)&cliaddr,&len);
 
 n=read(newfd,buff,sizeof(buff));
 printf("\nReceived Message is: %s\n",buff);
-strcpy("Hi da ",buff);
+
 
 close(sockfd);
 close(newfd);
