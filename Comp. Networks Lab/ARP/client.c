@@ -66,11 +66,12 @@ int main(int argc,char **argv)
     int counter=0;
 
     strcat(packet,"|45-DA-62-21-1A-B2");   //some MAC address
+    packet[strlen(packet)-1]='\0';
 
     while(counter<backlog)
     {
         printf("\nClient-%d\n\tEnter Your IP: ",counter+1);
-        gets(myIP);
+	gets(myIP);
 
         if(strcmp(recvIP,myIP)==0)
         {
