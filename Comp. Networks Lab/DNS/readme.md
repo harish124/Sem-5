@@ -1,1 +1,1 @@
-# This folder contains : Simulation od DNS using UDP
+# This folder contains : Simulation of DNS using UDP
