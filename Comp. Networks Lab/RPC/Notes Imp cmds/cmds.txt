@@ -1,0 +1,15 @@
+rpcgen -C fib.x
+rpcgen -a -C fib.x
+
+edit server and client files
+
+make -f MakeFile.fib
+./fib_server in 1 terminal and ./fib_client localhost in another
+
+if programs are not running 
+check rpcinfo if that's not working install rpcbind
+restart terminals
+still programs are not working run the below code
+sudo service rpcbind restart #in case rpcbind is not working
+
+That's it.
