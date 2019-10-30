@@ -2,6 +2,8 @@
 set ns [new Simulator]
 #Open the nam trace file
 set nf [open outr.nam w]
+set nr [open reno.tr w]
+$ns trace-all $nr
 $ns namtrace-all $nf
 $ns color 1 Blue
 $ns color 2 Red
@@ -12,7 +14,7 @@ $ns flush-trace
 #Close the trace file
 close $nf
 #Execute nam on the trace file
-exec nam outr.nam &
+#exec nam outr.nam &
 exit 0
 }
 # Creating Nodes

@@ -1,6 +1,6 @@
 #Create a simulator object
 set ns [new Simulator]
-set nr [open outt.tr w]
+set nr [open tahoe.tr w]
 $ns trace-all $nr
 #Open the nam trace file
 set nf [open outt.nam w]
