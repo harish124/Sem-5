@@ -14,7 +14,7 @@ global ns nf nd
 $ns flush-trace
 close $nf
 close $nd
-exec nam prog.nam &
+#exec nam prog.nam &
 exit 0
 }
 
